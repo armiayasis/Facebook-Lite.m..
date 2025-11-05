@@ -49,10 +49,6 @@ outputType = "console"
 localPort = 3001
 externalPort = 3001
 
-[[ports]]
-localPort = 41359
-externalPort = 3000
-
 [deployment]
 deploymentTarget = "autoscale"
 run = ["bash", "-c", "cd backend && npm start & cd frontend && npm start"]
