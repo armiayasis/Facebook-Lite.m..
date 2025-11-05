@@ -12,6 +12,14 @@ class DatabaseConnection {
     try {
       const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/facebook-lite';
       
+      // Skip connection if no valid MongoDB URI
+      if (!MONGODB_URI || MONGODB_URI.trim() === '' || 
+          (!MONGODB_URI.startsWith('mongodb://') && !MONGODB_URI.startsWith('mongodb+srv://'))) {
+        logger.warn('⚠️ No valid MongoDB URI provided. Running without database.');
+        this.isConnected = false;
+        return false;
+      }
+      
       const options = {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -40,8 +48,7 @@ class DatabaseConnection {
         logger.info(`🔄 Retrying connection... (${this.retryCount}/${this.maxRetries})`);
         setTimeout(() => this.connect(), 5000 * this.retryCount);
       } else {
-        logger.error('💀 Max retries reached. Could not connect to MongoDB');
-        throw error;
+        logger.warn('💀 Max retries reached. Running without database connection.');
       }
       
       return false;

@@ -87,8 +87,7 @@ class FacebookLiteServer {
       database.setupEventHandlers();
       logger.info('📊 Database setup completed');
     } catch (error) {
-      logger.error('💀 Database connection failed:', error);
-      throw error;
+      logger.warn('⚠️ Database connection failed, but server will continue:', error.message);
     }
   }
 
@@ -292,9 +291,11 @@ class FacebookLiteServer {
    */
   startServer() {
     const port = config.server.port;
+    const host = '0.0.0.0';
     this.server.setTimeout(10 * 60 * 1000);
-    this.server.listen(port, () => {
+    this.server.listen(port, host, () => {
       logger.info(`🎉 Facebook Lite server started successfully!`);
+      logger.info(`🌐 Server listening on ${host}:${port}`);
       logger.info(`💬 Socket.IO enabled for real-time chat`);
       logger.info(`💾 Database: ${database.isConnected() ? '✅ Connected' : '❌ Disconnected'}`);
       
