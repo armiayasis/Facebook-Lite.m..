@@ -67,12 +67,14 @@ const corsOptions = {
     const allowedOrigins = [
       config.cors.origin,
       'http://localhost:3000',
-      'http://127.0.0.1:3000'
+      'http://localhost:5000',
+      'http://127.0.0.1:3000',
+      'http://127.0.0.1:5000'
     ];
     
     if (config.server.isDevelopment) {
-      // In development, allow any localhost origin
-      if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
+      // In development, allow localhost origins and Replit domains
+      if (origin.includes('localhost') || origin.includes('127.0.0.1') || origin.includes('.replit.dev') || origin.includes('.repl.co')) {
         return callback(null, true);
       }
     }

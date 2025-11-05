@@ -152,7 +152,23 @@ class FacebookLiteServer {
     // Initialize Socket.IO
     this.io = socketIo(this.server, {
       cors: {
-        origin: process.env.CLIENT_URL || "http://localhost:3000",
+        origin: function(origin, callback) {
+          // Allow requests with no origin
+          if (!origin) return callback(null, true);
+          
+          // Allow localhost and Replit domains
+          if (origin.includes('localhost') || origin.includes('127.0.0.1') || 
+              origin.includes('.replit.dev') || origin.includes('.repl.co')) {
+            return callback(null, true);
+          }
+          
+          // Allow configured CLIENT_URL
+          if (origin === process.env.CLIENT_URL) {
+            return callback(null, true);
+          }
+          
+          callback(null, true);
+        },
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true
       }
