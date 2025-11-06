@@ -1,0 +1,241 @@
+
+.dashboard-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.dashboard-header h2 {
+  color: #667eea;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.user-name {
+  color: #666;
+  font-size: 14px;
+}
+
+.logout-button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logout-button:hover {
+  background: #d32f2f;
+}
+
+.balance-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.balance-label {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.balance-amount {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.account-number {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.action-btn {
+  background: white;
+  border: 2px solid #e0e0e0;
+  padding: 15px 5px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.action-btn:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.action-icon {
+  font-size: 24px;
+}
+
+.content-area {
+  min-height: 200px;
+}
+
+.recent-transactions h3,
+.transfer-form h3,
+.bills-section h3,
+.history-section h3 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.transaction-item,
+.history-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.transaction-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+}
+
+.transaction-details,
+.history-details {
+  flex: 1;
+}
+
+.transaction-name,
+.history-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.transaction-date,
+.history-date {
+  color: #999;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.transaction-amount,
+.history-amount {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.transaction-amount.received,
+.history-amount.received {
+  color: #4caf50;
+}
+
+.transaction-amount.sent,
+.history-amount.sent {
+  color: #f44336;
+}
+
+.transfer-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.submit-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+}
+
+.biller-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.biller-item {
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.biller-item:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(5px);
+}
