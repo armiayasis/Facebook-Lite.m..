@@ -1,0 +1,16 @@
+
+{
+  "name": "fca-messenger-bot",
+  "version": "1.0.0",
+  "description": "Facebook Messenger Bot using fca-unofficial",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "keywords": ["facebook", "messenger", "bot"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "fca-unofficial": "^1.3.13"
+  }
+}
